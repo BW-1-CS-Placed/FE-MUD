@@ -21,8 +21,3 @@ export const initGame = () => dispatch => {
 export const makeMove = dir => dispatch => {
     console.log(dir, dispatch);
 };
-
-//Get all Rooms
-export const getAllRooms = () => dispatch => {
-    console.log(dispatch);
-};
