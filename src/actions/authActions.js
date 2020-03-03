@@ -20,7 +20,7 @@ export const registerUser = register => dispatch => {
         )
         .then(res => {
             console.log(res);
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('token', res.data.key);
             localStorage.setItem('UserName', res.data.UserName);
             dispatch({
                 type: REGISTER_SUCCESS,
@@ -40,9 +40,9 @@ export const loginUser = creds => dispatch => {
     console.log('login creds', creds);
     dispatch({ type: LOGIN_START });
     return axios
-        .post()
+        .post('https://lambda-mud-test.herokuapp.com/api/login', creds)
         .then(res => {
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('token', res.data.key);
             localStorage.setItem('UserName', res.data.UserName);
             dispatch({
                 type: LOGIN_SUCCESS,
