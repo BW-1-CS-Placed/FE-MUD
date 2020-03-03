@@ -9,3 +9,22 @@ import {
     MOVE_START,
     MOVE_SUCCESS
 } from '../actions/types';
+
+const initialState = {
+    loading: false,
+    player: { id: '', user: '' },
+    currentRoom: {},
+    players: [],
+    rooms: [],
+    error: '',
+    position: [1, 1]
+};
+
+const gameReducers = (state = initialState, action) => {
+    switch (action.type) {
+        default:
+            return state;
+    }
+};
+
+export default gameReducers;
