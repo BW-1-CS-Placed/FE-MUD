@@ -6,6 +6,7 @@ const Navbar = () => {
         <Fragment>
             <Link to='/register'>Register</Link>
             <Link to='/login'>Login</Link>
+            <Link to='/game'>Game</Link>
         </Fragment>
     );
 };

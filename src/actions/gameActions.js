@@ -1,9 +1,6 @@
 import axiosWithAuth from '../utils/axiosWithAuth';
 
 import {
-    GET_ROOM_FAILURE,
-    GET_ROOM_START,
-    GET_ROOM_SUCCESS,
     INIT_FAILURE,
     INIT_START,
     INIT_SUCCESS,
@@ -14,7 +11,24 @@ import {
 
 //INitialize Game
 export const initGame = () => dispatch => {
-    console.log(dispatch);
+    console.log('init game', dispatch);
+    dispatch({ type: INIT_START });
+    return axiosWithAuth()
+        .get('https://lambda-mud-test.herokuapp.com/api/init')
+        .then(res => {
+            console.log('init get', res);
+            dispatch({
+                type: INIT_SUCCESS,
+                payload: res.data // res.data.UserName?
+            });
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({
+                type: INIT_FAILURE,
+                payload: err.message
+            });
+        });
 };
 
 //Movement
