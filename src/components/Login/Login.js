@@ -21,44 +21,40 @@ const Login = props => {
         dispatch(loginUser(infor));
     };
     return (
-        <Fragment>
-            <div className='form-cont'>
-                <h1>Login</h1>
-                <form
-                    onSubmit={e => {
-                        handleSubmit(e);
-                    }}
-                >
-                    <div className='input-Wrapper'>
-                        <div className='input-layout'>
-                            <label>Username</label>
-                            <input
-                                type='text'
-                                placeholder='Username'
-                                name='username'
-                                className='username'
-                                onChange={handleChange}
-                                value={infor.username}
-                            />
-                            <label>Password</label>
-                            <input
-                                type='password'
-                                placeholder='Password'
-                                name='password'
-                                className='password'
-                                onChange={handleChange}
-                                value={infor.password}
-                            />
-                        </div>
-                    </div>
-                    <div className='layout-w'>
-                        <button type='submit' className='signIn-btn'>
-                            Login
-                        </button>
-                    </div>
-                </form>
+      <div className='Form-Container'>
+        <h1>Login</h1>
+        <form
+          onSubmit={e => {
+            handleSubmit(e);
+          }}
+        >
+          <div className='input-Wrapper'>
+            <div className='input-layout'>
+              <label>Username</label>
+              <input
+                type='text'
+                placeholder='Username'
+                name='username'
+                className='username'
+                onChange={handleChange}
+                value={infor.username}
+              />
+              <label>Password</label>
+              <input
+                type='password'
+                placeholder='Password'
+                name='password'
+                className='password'
+                onChange={handleChange}
+                value={infor.password}
+              />
             </div>
-        </Fragment>
+            <button type='submit' className='signIn-btn'>
+              Login
+            </button>
+          </div>
+        </form>
+      </div>
     );
 };
 export default Login;

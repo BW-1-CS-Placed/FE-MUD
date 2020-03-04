@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
+import './register.scss';
 
 const Register = props => {
     //use local state to grab users login in info
@@ -22,53 +23,55 @@ const Register = props => {
         dispatch(registerUser(infor));
     };
     return (
-        <Fragment>
-            <div className='form-cont'>
-                <h1>Register</h1>
-                <form
-                    onSubmit={e => {
-                        handleSubmit(e);
-                    }}
-                >
-                    <div className='input-Wrapper'>
-                        <div className='input-layout'>
-                            <label>Name</label>
-                            <input
-                                type='text'
-                                placeholder='Username'
-                                name='username'
-                                className='username'
-                                onChange={handleChange}
-                                value={infor.username}
-                            />
-                            <label>Password</label>
-                            <input
-                                type='password'
-                                placeholder='Password'
-                                name='password1'
-                                className='password'
-                                onChange={handleChange}
-                                value={infor.password1}
-                            />
-                            <label>Password</label>
-                            <input
-                                type='password'
-                                placeholder='Confirm Password'
-                                name='password2'
-                                className='password'
-                                onChange={handleChange}
-                                value={infor.password2}
-                            />
-                        </div>
-                    </div>
-                    <div className='layout-w'>
-                        <button type='submit' className='signUp-btn'>
-                            Register
-                        </button>
-                    </div>
-                </form>
+      <div className='Form-Container'>
+        <h1>Register</h1>
+        <form
+          className='Login-Form-Wrapper'
+          onSubmit={e => {
+            handleSubmit(e);
+          }}
+        >
+          <div className='input-Wrapper'>
+            <div className='input-layout'>
+              <label>Name</label>
+              <input
+                type='text'
+                placeholder='Username'
+                name='username'
+                className='username'
+                onChange={handleChange}
+                value={infor.username}
+              />
+              <label>Password</label>
+              <input
+                type='password'
+                placeholder='Password'
+                name='password1'
+                className='password'
+                onChange={handleChange}
+                value={infor.password1}
+              />
+              <label>Confirm Password</label>
+              <input
+                type='password'
+                placeholder='Confirm Password'
+                name='password2'
+                className='password'
+                onChange={handleChange}
+                value={infor.password2}
+              />
             </div>
-        </Fragment>
+            <button type='submit' className='signup-btn'>
+              {' '}
+              Register
+            </button>
+          </div>
+
+          {/* <div className='register-container'>
+                   Do you have an account/{' '}
+               </div> */}
+        </form>
+      </div>
     );
 };
 export default Register;

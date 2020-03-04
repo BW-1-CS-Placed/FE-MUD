@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 // import styled from 'styled-components';
 import './navbar.scss';
 import mud from './mud.jpg';
@@ -17,14 +17,22 @@ const Navbar = () => {
             backgroundSize: 'contain'
           }}
         />
-        <Link to='#' className='links'>
+        <NavLink to='#' className='links'>
           Mud Games
-        </Link>
+        </NavLink>
       </div>
       <div className='navbar-right'>
-        <Link to='/register'>Register</Link>
-        <Link to='/'>Login</Link>
-        {/* <Link to='/game'>Game</Link> */}
+        <NavLink to='/register' activeStyle={{ color: 'white' }}>
+          Register
+        </NavLink>
+        <div>***</div>
+        <NavLink to='/' activeStyle={{ color: 'white' }}>
+          Login
+        </NavLink>
+        <div>***</div>
+        <NavLink to='/game' activeStyle={{ color: 'white' }}>
+          Game
+        </NavLink>
       </div>
     </div>
   );
