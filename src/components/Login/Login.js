@@ -6,8 +6,7 @@ const Login = props => {
     //use local state to grab users login in info
     const [infor, setInfor] = useState({
         username: '',
-        passwordA: '',
-        passwordB: ''
+        password: ''
     });
     const dispatch = useDispatch();
     //handle for changes
@@ -24,6 +23,7 @@ const Login = props => {
     return (
         <Fragment>
             <div className='form-cont'>
+                <h1>Login</h1>
                 <form
                     onSubmit={e => {
                         handleSubmit(e);
@@ -31,7 +31,7 @@ const Login = props => {
                 >
                     <div className='input-Wrapper'>
                         <div className='input-layout'>
-                            <label>User</label>
+                            <label>Username</label>
                             <input
                                 type='text'
                                 placeholder='Username'
@@ -40,18 +40,9 @@ const Login = props => {
                                 onChange={handleChange}
                                 value={infor.username}
                             />
-                            <label>Email</label>
-                            <input
-                                type='text'
-                                placeholder='Email'
-                                name='email'
-                                className='email'
-                                onChange={handleChange}
-                                value={infor.email}
-                            />
                             <label>Password</label>
                             <input
-                                type='text'
+                                type='password'
                                 placeholder='Password'
                                 name='password'
                                 className='password'

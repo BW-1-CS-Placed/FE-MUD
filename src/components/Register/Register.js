@@ -6,8 +6,8 @@ const Login = props => {
     //use local state to grab users login in info
     const [infor, setInfor] = useState({
         username: '',
-        passwordA: '',
-        passwordB: ''
+        password1: '',
+        password2: ''
     });
     const dispatch = useDispatch();
     //handle for changes
@@ -40,29 +40,29 @@ const Login = props => {
                                 onChange={handleChange}
                                 value={infor.username}
                             />
-                            <label>Email</label>
+                            <label>Password</label>
                             <input
-                                type='text'
-                                placeholder='Email'
-                                name='email'
-                                className='email'
+                                type='password'
+                                placeholder='Password'
+                                name='password1'
+                                className='password'
                                 onChange={handleChange}
-                                value={infor.email}
+                                value={infor.password1}
                             />
                             <label>Password</label>
                             <input
-                                type='text'
-                                placeholder='Password'
-                                name='password'
+                                type='password'
+                                placeholder='Confirm Password'
+                                name='password2'
                                 className='password'
                                 onChange={handleChange}
-                                value={infor.password}
+                                value={infor.password2}
                             />
                         </div>
                     </div>
                     <div className='layout-w'>
-                        <button type='submit' className='signIn-btn'>
-                            Login
+                        <button type='submit' className='signUp-btn'>
+                            Register
                         </button>
                     </div>
                 </form>
