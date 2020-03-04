@@ -48,12 +48,12 @@ export const position = data => dispatch => {
 
 //get all rooms
 export const getAllRooms = () => dispatch => {
-    console.log('getAllRooms', dispatch);
+    // console.log('getAllRooms', dispatch);
     dispatch({ type: GET_ROOM_START });
     return axiosWithAuth()
         .get('https://mud-cs23-backend.herokuapp.com/api/adv/get_map/')
         .then(res => {
-            console.log('get all rooms', res);
+            // console.log('get all rooms', res);
             dispatch({
                 type: GET_ROOM_SUCCESS,
                 payload: res.data // res.data.UserName?
