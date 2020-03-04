@@ -13,14 +13,14 @@ import {
 export const registerUser = register => dispatch => {
     console.log('register user', register);
     dispatch({ type: REGISTER_START });
-    return axios
+    return axiosWithAuth()
         .post(
-            'https://lambda-mud-test.herokuapp.com/api/registration',
+            'https://lambda-mud-test.herokuapp.com/api/registration/',
             register
         )
         .then(res => {
-            console.log(res);
-            localStorage.setItem('token', res.data.key);
+            console.log('register res', res.data);
+            localStorage.setItem('token', res.data.token);
             localStorage.setItem('UserName', res.data.UserName);
             dispatch({
                 type: REGISTER_SUCCESS,
@@ -28,6 +28,7 @@ export const registerUser = register => dispatch => {
             });
         })
         .catch(err => {
+            console.log('register err', err);
             dispatch({
                 type: AUTH_ERROR,
                 payload: err.message
@@ -40,8 +41,9 @@ export const loginUser = creds => dispatch => {
     console.log('login creds', creds);
     dispatch({ type: LOGIN_START });
     return axios
-        .post('https://lambda-mud-test.herokuapp.com/api/login', creds)
+        .post('https://lambda-mud-test.herokuapp.com/api/login/', creds)
         .then(res => {
+            console.log('loginUser', res);
             localStorage.setItem('token', res.data.key);
             localStorage.setItem('UserName', res.data.UserName);
             dispatch({
@@ -50,6 +52,7 @@ export const loginUser = creds => dispatch => {
             });
         })
         .catch(err => {
+            console.log('login err', err);
             dispatch({
                 type: AUTH_ERROR,
                 payload: err.message
