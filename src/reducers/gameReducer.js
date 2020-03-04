@@ -12,7 +12,7 @@ import {
 
 const initialState = {
     loading: false,
-    player: { id: '', user: '' },
+    player: { uuid: '', user: '' },
     currentRoom: {},
     players: [],
     rooms: [],
@@ -21,6 +21,7 @@ const initialState = {
 };
 
 const gameReducers = (state = initialState, action) => {
+    // console.log('gameReducer', action);
     switch (action.type) {
         default:
             return state;

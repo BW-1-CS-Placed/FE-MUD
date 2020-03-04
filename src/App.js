@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 //import client register component
 import Register from './components/Register/Register';
 import Navbar from './components/navBar/Navbar';
+import Map from './components/map/Map';
 import './App.css';
 
 // change components dependent on merge
@@ -19,6 +20,7 @@ const App = () => {
                     {/* <Route exact path='/game' component={World} />  */}
                 </Switch>
             </div>
+            <Map />
         </Fragment>
     );
 };

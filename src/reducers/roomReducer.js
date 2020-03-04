@@ -3,7 +3,10 @@ import {
     TITLE,
     ERROR_MSG,
     POSITION,
-    PLAYERS
+    PLAYERS,
+    GET_ROOM_FAILURE,
+    GET_ROOM_SUCCESS,
+    GET_ROOM_START
 } from '../actions/types';
 
 const initialState = {
@@ -11,10 +14,12 @@ const initialState = {
     description: '',
     players: [],
     error_msg: '',
-    position: [1, 1]
+    position: [1, 1],
+    rooms: []
 };
 
 const roomReducer = (state = initialState, action) => {
+    console.log('roomReducer', action);
     switch (action.type) {
         case TITLE:
             return ({ ...state } = action.payload);
@@ -26,6 +31,15 @@ const roomReducer = (state = initialState, action) => {
             return { ...(state = action.payload) };
         case POSITION:
             return { ...state, position: action.payload };
+        case GET_ROOM_START:
+            return { ...state };
+        case GET_ROOM_SUCCESS:
+            return { ...state, rooms: action.payload };
+        case GET_ROOM_FAILURE:
+            return {
+                ...state,
+                error_msg: action.payload
+            };
         default:
             return state;
     }
