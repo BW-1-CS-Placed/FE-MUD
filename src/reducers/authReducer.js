@@ -14,6 +14,7 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
+    console.log('authReducer', action);
     switch (action.type) {
         case LOGIN_START:
         case REGISTER_START:

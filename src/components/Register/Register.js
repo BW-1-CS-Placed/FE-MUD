@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
 
-const Login = props => {
+const Register = props => {
     //use local state to grab users login in info
     const [infor, setInfor] = useState({
         username: '',
@@ -24,6 +24,7 @@ const Login = props => {
     return (
         <Fragment>
             <div className='form-cont'>
+                <h1>Register</h1>
                 <form
                     onSubmit={e => {
                         handleSubmit(e);
@@ -31,7 +32,7 @@ const Login = props => {
                 >
                     <div className='input-Wrapper'>
                         <div className='input-layout'>
-                            <label>User</label>
+                            <label>Name</label>
                             <input
                                 type='text'
                                 placeholder='Username'
@@ -70,4 +71,4 @@ const Login = props => {
         </Fragment>
     );
 };
-export default Login;
+export default Register;

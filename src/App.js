@@ -13,7 +13,6 @@ const App = () => {
         <Fragment>
             <Navbar />
             <div className='container'>
-                APP.js
                 <Switch>
                     <Route exact path='/' component={Login} />
                     <Route exact path='/register' component={Register} />
