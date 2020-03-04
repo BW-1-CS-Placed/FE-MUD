@@ -13,7 +13,7 @@ const Login = props => {
     //handle for changes
     const handleChange = e => {
         // console.log(e)
-        setInfor({ ...infor, [e.target.name]: e.target.name });
+        setInfor({ ...infor, [e.target.name]: e.target.value });
     };
     // handle submit
     const handleSubmit = e => {

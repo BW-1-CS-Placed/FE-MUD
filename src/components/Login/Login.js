@@ -11,8 +11,8 @@ const Login = props => {
     const dispatch = useDispatch();
     //handle for changes
     const handleChange = e => {
-        // console.log(e)
-        setInfor({ ...infor, [e.target.name]: e.target.name });
+        console.log('login handlechange', e);
+        setInfor({ ...infor, [e.target.name]: e.target.value });
     };
     // handle submit
     const handleSubmit = e => {
