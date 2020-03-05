@@ -5,7 +5,8 @@ import Login from './components/Login/Login';
 //import client register component
 import Register from './components/Register/Register';
 import Navbar from './components/navBar/Navbar';
-import Map from './components/map/Map';
+import World from './components/world/index';
+
 import './App.css';
 
 // change components dependent on merge
@@ -17,10 +18,9 @@ const App = () => {
                 <Switch>
                     <Route exact path='/' component={Login} />
                     <Route exact path='/register' component={Register} />
-                    {/* <Route exact path='/game' component={World} />  */}
+                    <Route exact path='/game' component={World} />
                 </Switch>
             </div>
-            <Map />
         </Fragment>
     );
 };

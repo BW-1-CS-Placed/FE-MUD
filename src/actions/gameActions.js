@@ -14,7 +14,7 @@ export const initGame = () => dispatch => {
     console.log('init game', dispatch);
     dispatch({ type: INIT_START });
     return axiosWithAuth()
-        .get('https://lambda-mud-test.herokuapp.com/api/init')
+        .get('https://mud-cs23-backend.herokuapp.com/api/init')
         .then(res => {
             console.log('init get', res);
             dispatch({
@@ -33,5 +33,15 @@ export const initGame = () => dispatch => {
 
 //Movement
 export const makeMove = dir => dispatch => {
-    console.log(dir, dispatch);
+    dispatch({ type: MOVE_START });
+    return axiosWithAuth()
+        .post('https://mud-cs23-backend.herokuapp.com/api/move', dir)
+        .then(res => {
+            console.log('makeMove', res);
+            dispatch({ type: MOVE_SUCCESS, payload: res.data });
+        })
+        .catch(err => {
+            console.log(err);
+            dispatch({ type: MOVE_FAILURE, payload: err.message });
+        });
 };
