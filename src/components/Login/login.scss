@@ -1,14 +1,20 @@
 .Form-Container {
   display: flex;
   flex-direction: column;
-  background: white;
+  background: rgb(118, 116, 148);
   margin: 20px auto;
-  height: 400px;
-  width: 400px;
+  // height: 400px;
+  // width: 400px;
   justify-content: center;
   align-items: center;
   border: 1px solid rgba(0, 0, 0, 0.125);
   font-family: 'Roboto', sans-serif;
+
+  .title {
+  margin-top: 150px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 
   .input-Wrapper {
     display: flex;

@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, {  useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../actions/authActions';
+import { NavLink } from 'react-router-dom';
 import './register.scss';
 
 const Register = props => {
@@ -24,7 +25,7 @@ const Register = props => {
     };
     return (
       <div className='Form-Container'>
-        <h1>Register</h1>
+        <h1 className='title'>Sign Up</h1>
         <form
           className='Login-Form-Wrapper'
           onSubmit={e => {
@@ -65,11 +66,15 @@ const Register = props => {
               {' '}
               Register
             </button>
+            {/* <div className='register-container'>
+              <NavLink to='/' activeStyle={{ color: 'blue' }}>
+                Login Here
+        </NavLink>
+            </div> */}
+            
           </div>
 
-          {/* <div className='register-container'>
-                   Do you have an account/{' '}
-               </div> */}
+          
         </form>
       </div>
     );
