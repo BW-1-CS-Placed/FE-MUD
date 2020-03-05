@@ -1,6 +1,7 @@
-import React, { Fragment, useState } from 'react';
+import React, {  useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../actions/authActions';
+import { NavLink } from 'react-router-dom';
 
 const Login = props => {
     //use local state to grab users login in info
@@ -22,7 +23,7 @@ const Login = props => {
     };
     return (
       <div className='Form-Container'>
-        <h1>Login</h1>
+        <h1 className='title'>Login</h1>
         <form
           onSubmit={e => {
             handleSubmit(e);
@@ -52,7 +53,13 @@ const Login = props => {
             <button type='submit' className='signIn-btn'>
               Login
             </button>
+            {/* <div className='register-container'>
+              Dont have an account  <NavLink to='/register' activeStyle={{ color: 'white' }}>
+                Register
+        </NavLink>
+            </div> */}
           </div>
+          
         </form>
       </div>
     );
